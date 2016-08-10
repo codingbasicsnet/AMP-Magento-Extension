@@ -1,0 +1,8 @@
+<header class="title-bar clearfix">
+	<div class="wrapper">
+		<a href="https://www.justhype.co.uk" title="JUST HYPE" class="logo">⚡</a>
+
+		<?php $currentUrl = Mage::helper('core/url')->getCurrentUrl();$bodytag = str_replace("/amp/", "/", $currentUrl); ?>
+		<a href="<?php echo $bodytag; ?>" title="JUST HYPE" class="nav btn btn__cta">Shop on Full Site</a>
+	</div>
+</header>

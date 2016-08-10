@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<layout>
+	
+	<!--
+	Add/Remove Items From Head
+	-->
+	<default translate="label" module="page">
+		
+		<reference name="root">
+			<reference name="head">
+				
+				<block type="core/text" name="amps.cdn.v0">
+					<action method="setText">
+						<text><![CDATA[<script src="https://cdn.ampproject.org/v0.js" async></script>]]></text>
+					</action>
+				</block>
+				
+				<block type="core/text" name="amps.cdn.usernotification">
+					<action method="setText">
+						<text><![CDATA[<script custom-element="amp-user-notification" src="https://cdn.ampproject.org/v0/amp-user-notification-0.1.js" async></script>]]></text>
+					</action>
+				</block>
+				
+				
+				<block type="core/template" name="MageAMPCSS" as="MageAMPCSS" template="page/html/styles.phtml" />
+
+				<!-- No user javascript is allowed -->
+				<action method="removeItem"><type>js</type><script>prototype/prototype.js</script></action>
+				<action method="removeItem"><type>js</type><script>lib/ccard.js</script></action>
+				<action method="removeItem"><type>js</type><script>prototype/validation.js</script></action>
+				<action method="removeItem"><type>js</type><script>scriptaculous/builder.js</script></action>
+				<action method="removeItem"><type>js</type><script>scriptaculous/effects.js</script></action>
+				<action method="removeItem"><type>js</type><script>scriptaculous/dragdrop.js</script></action>
+				<action method="removeItem"><type>js</type><script>scriptaculous/controls.js</script></action>
+				<action method="removeItem"><type>js</type><script>scriptaculous/slider.js</script></action>
+				<action method="removeItem"><type>js</type><script>varien/js.js</script></action>
+				<action method="removeItem"><type>js</type><script>varien/form.js</script></action>
+				<action method="removeItem"><type>js</type><script>varien/menu.js</script></action>
+				<action method="removeItem"><type>js</type><script>mage/translate.js</script></action>
+				<action method="removeItem"><type>js</type><script>mage/cookies.js</script></action>
+				<action method="unsetChild"><name>js_cookies</name></action>
+				<action method="unsetChild"><name>optional_zip_countries</name></action>
+
+				<!-- No external css is allowed -->
+				<action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+				<action method="removeItem"><type>skin_css</type><name>css/widgets.css</name></action>
+				<action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>
+				<action method="removeItem"><type>skin_css</type><name>css/styles-ie.css</name><params/><if>lt IE 8</if></action>
+				<action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name><params/><if>lt IE 7</if></action>
+				<action method="removeItem"><type>skin_js</type><name>js/ie6.js</name><params/><if>lt IE 7</if></action>
+
+			</reference>
+		</reference>
+		
+		<remove name="catalog.compare.sidebar" />
+		<remove name="right.permanent.callout" />
+		<remove name="left.permanent.callout" />
+		<remove name="left.newsletter" />
+		<remove name="right.reports.product.viewed" />
+		<remove name="paypal.partner.right.logo" />
+		<remove name="right.poll" />
+		<remove name="cart_sidebar" />
+		<remove name="checkout_cart_link" />
+		<remove name="catalog.compare.list" />
+	</default>
+	
+	<!--
+	Default layout, loads most of the pages
+	-->
+	<default>
+		<!-- Header -->
+		<reference name="header">
+			<!-- Insert Code Here -->
+		</reference>
+		
+		<!-- Left Sidebar -->
+		<reference name="left"> 
+			<!-- Insert Code Here -->
+		</reference> 
+		
+		<!-- Right Sidebar -->
+		<reference name="right">
+			<remove name="right.poll" />
+		</reference>
+		
+		<!-- Content -->
+		<reference name="content">
+			<!-- Insert Code Here -->
+		</reference>
+		
+		<!-- Top Nav -->
+		<reference name="top.nav">
+			<!-- Insert Code Here -->
+		</reference>
+		
+	</default>
+	
+	<!--
+	CMS Layout
+	-->
+	<cms_page>
+		
+		<!-- Header -->
+		<reference name="header">
+			<!-- Insert Code Here -->
+		</reference>
+		
+		<!-- Left Sidebar -->
+		<reference name="left"> 
+			<!-- Insert Code Here -->
+		</reference> 
+		
+		<!-- Right Sidebar -->
+		<reference name="right">
+			<!-- Insert Code Here -->
+		</reference>
+		
+		<!-- Content -->
+		<reference name="content">
+			<!-- Insert Code Here -->
+		</reference>
+	
+	</cms_page>
+	
+	<!--
+	CMS Homepage
+	-->
+	<cms_index_index>
+	
+		<!-- Header -->
+		<reference name="header">
+			<!-- Insert Code Here -->
+		</reference>
+		
+		<!-- Left Sidebar -->
+		<reference name="left"> 
+			<!-- Insert Code Here -->
+		</reference> 
+		
+		<!-- Right Sidebar -->
+		<reference name="right">
+			<!-- Insert Code Here -->
+		</reference>
+		
+		<!-- Content -->
+		<reference name="content">
+			<!-- Insert Code Here -->
+		</reference>
+	
+	</cms_index_index>
+	
+	
+	
+	<!--
+	Catalog Category Layout
+	-->
+	<catalog_category_default translate="label">
+	<!-- Insert Code Here -->
+	</catalog_category_default>  
+	
+	<!--
+	Catalog Product View Layout
+	-->
+	<catalog_product_view translate="label">
+	<!-- Insert Code Here -->
+	</catalog_product_view>  
+	
+	<!--
+	Catalog Layered Layout
+	-->
+	<catalog_category_layered translate="label">
+	<!-- Insert Code Here -->
+	</catalog_category_layered>
+	
+	<!--
+	Catalog Search Results Layout
+	-->
+	<catalogsearch_result_index translate="label">
+	<!-- Insert Code Here -->
+	</catalogsearch_result_index>
+	
+	<!--
+	Catalog Advanced Search Layout
+	-->
+	<catalogsearch_advanced_index translate="label">
+	<!-- Insert Code Here -->
+	</catalogsearch_advanced_index>  
+	
+	<!--
+	Catalog Advanced Search Results Layout
+	-->
+	<catalogsearch_advanced_result translate="label">
+	<!-- Insert Code Here -->
+	</catalogsearch_advanced_result>	
+	
+	<!--
+	Cart Template
+	-->
+	<checkout_cart_index translate="label">
+	<!-- Insert Code Here -->
+	</checkout_cart_index>
+	
+	<!--
+	OnePage	 Layout
+	-->
+	<checkout_onepage_index>
+	<!-- Insert Code Here -->
+	</checkout_onepage_index>
+	
+	<!--
+	OnePage Success Layout
+	-->
+	<checkout_onepage_success>
+	<!-- Insert Code Here -->
+	</checkout_onepage_success>
+	
+	<!--
+	Contact Page Template
+	-->
+	<contacts_index_index translate="label">
+	<!-- Insert Code Here -->
+	</contacts_index_index>
+	
+	<!--
+	Customer Account Layout
+	-->
+	<customer_account>
+	<!-- Insert Code Here -->
+	</customer_account>
+	
+	<!--
+	Customer Account
+	-->
+	<customer_account>
+	<!-- Insert Code Here -->	 
+	</customer_account>
+	
+	<!--
+	Customer Login Page
+	-->
+	<customer_account_login>
+	<!-- Insert Code Here -->	 
+	</customer_account_login>
+	
+	<!--
+	Customer Forgot Password
+	-->
+	<customer_account_forgotpassword>
+	<!-- Insert Code Here -->	 
+	</customer_account_forgotpassword>
+	
+	<!--
+	Customer Logged In
+	-->
+	<customer_logged_in>
+	<!-- Insert Code Here -->
+	</customer_logged_in>
+	
+	<!--
+	Customer Logged Out
+	-->
+	<customer_logged_out>
+	<!-- Insert Code Here -->
+	</customer_logged_out>
+
+</layout>
